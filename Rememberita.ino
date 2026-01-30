@@ -35,7 +35,6 @@ int distance = 150; // cm
 ///////////////////////////////
 
 #define USE_ENTERPRISE_WIFI
-//#define USE_HOME_WIFI
 
 // Telegram credentials & security
 const char* BOT_TOKEN = "8362864589:AAE2wdQavaOMRrrIMdnhRNUgU6fjNEI2SNc";
@@ -56,7 +55,6 @@ int taskCount = 0;
 bool timeReady = false; //becames true after NTP sync
 
 // functions in another tab 
-//void connectHomeWifi(); //only for tests at home
 void connectEnterpriseWiFi();
 void checkTelegram();
 void initButton();
@@ -108,7 +106,6 @@ void setup() {
   initDisplay();
 
   connectEnterpriseWiFi();
-  //connectHomeWifi();
   Serial.println("\nWiFi connected");
 
   setupTime();
@@ -123,17 +120,14 @@ void handleNewMessages(int numNewMessages) {
     String text = bot.messages[i].text;
     String chat_id = bot.messages[i].chat_id;
 
-    // ignore Telegram commands if you want
+    // ignore Telegram commands 
     if (text == "/start") continue;
 
     
     if (!handleMaybeScheduledCommand(text, chat_id)) {
       addTaskImmediate(text);
     }
-    if (taskActive) neoModeB(); // keep this as you had it
-    // currentTask = text;
-    // taskActive = true;
-    // neoModeB(); // purple ON immediately !!!!!!!
+    if (taskActive) neoModeB(); 
 
     Serial.println("Task received: " + currentTask);
   }
