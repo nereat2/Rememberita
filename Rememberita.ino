@@ -37,7 +37,7 @@ int distance = 150; // cm
 #define USE_ENTERPRISE_WIFI
 
 // Telegram credentials & security
-const char* BOT_TOKEN = "8362864589:AAE2wdQavaOMRrrIMdnhRNUgU6fjNEI2SNc";
+const char* BOT_TOKEN = "-------";
 WiFiClientSecure secured_client;
 UniversalTelegramBot bot(BOT_TOKEN, secured_client);
 

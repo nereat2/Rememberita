@@ -6,7 +6,7 @@
 const char* WIFI_SSID = "SUPSI";
 const char* EAP_IDENTITY = "nerea.asensio@supsi.ch";
 const char* EAP_USERNAME = "nerea.asensio@supsi.ch";
-const char* EAP_PASSWORD = "Interaction_2025!";
+const char* EAP_PASSWORD = "----------";
 
 void connectEnterpriseWiFi() {
   WiFi.disconnect(true);
